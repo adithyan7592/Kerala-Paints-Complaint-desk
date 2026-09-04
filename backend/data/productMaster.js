@@ -1,6 +1,7 @@
 // Product master: real data from PRICE_LIST_EM___BASE__1_.xlsx.
-// This is the ONLY set of products the portal should offer — nothing else.
-export const PRODUCTS = [
+// Backend's own copy so registration can be validated server-side —
+// a product not in this list is rejected, not just hidden from the dropdown.
+const PRODUCTS = [
   "All in One",
   "All in One RC 2",
   "All in One RC 7",
@@ -45,7 +46,7 @@ export const PRODUCTS = [
   "Bhadram In GN 16",
 ];
 
-export const QUANTITIES_BY_PRODUCT = {
+const QUANTITIES_BY_PRODUCT = {
   "All in One": ["20 Ltr", "10 Ltr", "4 Ltr", "1 Ltr"],
   "All in One RC 2": ["20 Ltr", "10 Ltr", "4 Ltr", "1 Ltr"],
   "All in One RC 7": ["18 Ltr", "9 Ltr", "3.6 Ltr", "0.9 Ltr"],
@@ -90,10 +91,7 @@ export const QUANTITIES_BY_PRODUCT = {
   "Bhadram In GN 16": ["18 Ltr", "9 Ltr", "3.6 Ltr", "0.9 Ltr"],
 };
 
-// Warranty period per product, as text exactly as Kerala Paints defines it
-// (e.g. "4 YEARS"). Used to show the customer what they're registering for,
-// and copied onto the registration record as a snapshot.
-export const WARRANTY_YEARS_BY_PRODUCT = {
+const WARRANTY_YEARS_BY_PRODUCT = {
   "All in One": "4 YEARS",
   "All in One RC 2": "4 YEARS",
   "All in One RC 7": "4 YEARS",
@@ -138,103 +136,4 @@ export const WARRANTY_YEARS_BY_PRODUCT = {
   "Bhadram In GN 16": "10 YEARS",
 };
 
-export const DISTRICTS = [
-  "Thiruvananthapuram",
-  "Kollam",
-  "Pathanamthitta",
-  "Alappuzha",
-  "Kottayam",
-  "Idukki",
-  "Ernakulam",
-  "Thrissur",
-  "Palakkad",
-  "Malappuram",
-  "Kozhikode",
-  "Wayanad",
-  "Kannur",
-  "Kasaragod",
-  "Mahe",
-  "Tamil Nadu",
-];
-
-export const OUTLETS_BY_DISTRICT = {
-  "Thiruvananthapuram": [
-    "Factory outlet (Attingal)",
-    "INMAX INTERIORS (Kazhakoottam Corporation)",
-    "INMAX INTERIORS (Balaramapuram Panchayuath)",
-  ],
-  "Kollam": [
-    "Factory outlet (Kottarakkara)",
-    "V & S  Traders (Sooranad  Panchayath)",
-    "Colournest paints (Velinallur Panchayath)",
-    "F & S TRADERS (Adhichanallor Panchayath)",
-    "HIRA GROUP (Pathanapuram Panchayath)",
-    "Colournest paints (Alayamon Panchayath)",
-    "CITY PAINTS & HARDWARES (Kalluvathukkal  Panchayath)",
-  ],
-  "Pathanamthitta": ["Factory outlet (Poomkavu)"],
-  "Alappuzha": [
-    "Factory outlet (Alappuzha)",
-    "MEZZAN (Chengannur Panchayath)",
-    "STEEL WORLD (Nooranad Panchayath)",
-  ],
-  "Kottayam": ["Factory outlet (Kottayam Logos Jn)"],
-  "Idukki": [
-    "Factory outlet (Adimali)",
-    "Factory outlet (Kattappana)",
-    "Factory outlet (Thodupuzha)",
-  ],
-  "Ernakulam": ["Factory outlet (Edappally)"],
-  "Thrissur": [
-    "Factory outlet (Chalakkudy)",
-    "KK BROTHERS (Guruvayoor Municipality)",
-  ],
-  "Palakkad": [
-    "Factory outlet (Kalpathy)",
-    "PR KUTHANNUR (Kuthannur Panchayath)",
-    "NEXUS SEVEN (Pattambi Municipality)",
-    "SHAMA TRADERS (Alanalloor Panchayath)",
-    "RGK  KERALA  PAINT (Nemmara Panchayath)",
-  ],
-  "Malappuram": [
-    "Factory outlet (Kuttippuram)",
-    "Factory outlet (Makkaraparambu)",
-    "OASIS HARDWARES (Nannambra  Panchayath)",
-    "SN SONS (Thalakkad Panchayath)",
-    "NOVARA (Perinthalmanna Municipality)",
-    "MARHABA G SHOPPEE (Angadippuram Panchayath)",
-    "PAINT HUB (Parappanagadi Panchayath)",
-  ],
-  "Wayanad": [
-    "Factory outlet (Meenagadi)",
-    "COLOUR NEST (Kalpetta Municipality)",
-    "WHITE HOUSE (Vythiri Panchayath)",
-    "VKS (Vellamunda Panchayath)",
-  ],
-  "Kozhikode": [
-    "Factory outlet (Chemancherry)",
-    "ES AGENCIES (Kuttiyadi Panchayath)",
-    "7 SHADES (Kozhikode Corporation (Pottammal))",
-    "7 SHADES (Kozhikode Corporation (Meecham))",
-    "YES WE ASSOSIACTES (Nadapuram Panchayath)",
-    "F S AGENCIES (Kunnummal Panchayath)",
-    "RAIN BOW PAINTS (Eramala Panchayath)",
-  ],
-  "Mahe": ["FRENCH TRADING (Mahe Panchayath)"],
-  "Kannur": [
-    "Factory outlet (Irikkur - Nayattupara)",
-    "PBS GROUP (Panoor Municipality)",
-    "B STAR TRADING (Cherupuzha Panchayath)",
-    "MYM TRADERS (Cheruthazham Panchayath)",
-    "KVS PAINTS (Peralassery Panchayath)",
-  ],
-  "Kasaragod": [
-    "Factory outlet (Kanhangad)",
-    "HNM MARKETING (Chengala Panchayath)",
-    "AMS INFINITY WORLS (Chemnad Panchayath)",
-    "ABM  PAINTS & HARDWARES (Ajanur Panchayath)",
-  ],
-  "Tamil Nadu": ["Factory outlet (Coimbatore)"],
-};
-
-export const STATES = ["Kerala", "Tamil Nadu", "Karnataka", "Andhra Pradesh"];
+module.exports = { PRODUCTS, QUANTITIES_BY_PRODUCT, WARRANTY_YEARS_BY_PRODUCT };
